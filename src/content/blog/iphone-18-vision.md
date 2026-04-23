@@ -9,7 +9,7 @@ tags: ["apple", "technology", "hardware"]
 
 As we progress through 2026, the rumors surrounding the upcoming **iPhone 18** are reaching a fever pitch. After the iterative updates of the past few years, Apple appears poised to introduce a device that completely reimagines mobile interaction.
 
-![iPhone 18 Concept](/images/iphone-18.png)
+![iPhone 18 Concept](/blog-antigravity/images/iphone-18.png)
 
 ## The Edge-to-Edge Holographic Display
 

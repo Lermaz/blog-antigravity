@@ -22,7 +22,7 @@ const recentPosts = posts.slice(0, 3);
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2">
       {recentPosts.map((post) => (
         <article class="p-6 rounded-lg bg-white/5 border border-transparent transition-all duration-300 hover:bg-[var(--color-primary-glow)] hover:border-[var(--color-border)] hover:-translate-y-0.5">
-          <a href={`/blog/${post.id}`} class="block no-underline text-inherit group">
+          <a href={`/blog-antigravity/blog/${post.id}`} class="block no-underline text-inherit group">
             <span class="date-tag">
               {post.data.pubDate.toLocaleDateString('en-US', {
                 year: 'numeric',
