@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Blog">
+  <div class="mb-8 mt-8">
+    <h1>All Transmissions</h1>
+    <p class="subtitle mb-8">Thoughts on code, design, and the future.</p>
+  </div>
+
+  <div class="blog-list glass-panel">
+    {posts.map((post) => (
+      <article class="post-item">
+        <a href={`/blog/${post.slug}`} class="post-link">
+          <span class="date-tag">
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </span>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+        </a>
+      </article>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+  }
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .post-item {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .post-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .post-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-item p {
+    color: var(--text-muted);
+  }
+</style>
