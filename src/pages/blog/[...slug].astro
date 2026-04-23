@@ -14,7 +14,7 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <article class="post-container mt-8 glass-panel">
+  <article class="p-8 sm:p-12 mt-8 glass-panel">
     <header class="mb-8">
       <span class="date-tag">
         {entry.data.pubDate.toLocaleDateString('en-US', {
@@ -23,64 +23,17 @@ const { Content } = await render(entry);
           day: 'numeric',
         })}
       </span>
-      <h1>{entry.data.title}</h1>
-      <div class="tags flex gap-4 mt-4">
+      <h1 class="text-[2.5rem] mb-2 !text-[var(--color-text-main)] !bg-none ![-webkit-text-fill-color:var(--color-text-main)]">{entry.data.title}</h1>
+      <div class="flex gap-4 mt-4 flex-wrap">
         {entry.data.tags?.map((tag) => (
-          <span class="tag">#{tag}</span>
+          <span class="text-[0.85rem] text-[var(--color-primary)] bg-[var(--color-primary-glow)] py-1 px-2.5 rounded-md font-medium">#{tag}</span>
         ))}
       </div>
     </header>
     
-    <div class="prose">
+    <div class="text-[1.1rem] leading-[1.8] text-[var(--color-text-muted)] [&_h1]:text-[var(--color-text-main)] [&_h1]:mt-8 [&_h1]:mb-4 [&_h2]:text-[var(--color-text-main)] [&_h2]:text-[1.8rem] [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-[var(--color-text-main)] [&_h3]:mt-8 [&_h3]:mb-4 [&_p]:mb-6 [&_ul]:mb-6 [&_ul]:pl-6 [&_ul]:list-disc [&_ol]:mb-6 [&_ol]:pl-6 [&_ol]:list-decimal [&_li]:mb-2 [&_strong]:text-[var(--color-text-main)] [&_strong]:font-bold [&_a]:text-[var(--color-primary)] [&_a:hover]:underline">
       <Content />
     </div>
   </article>
 </Layout>
 
-<style is:global>
-  .post-container {
-    padding: 3rem;
-  }
-  .post-container header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    background: none;
-    -webkit-text-fill-color: var(--text-main);
-    color: var(--text-main);
-  }
-  .tag {
-    font-size: 0.85rem;
-    color: var(--color-primary);
-    background: var(--color-primary-glow);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--border-radius-sm);
-    font-weight: 500;
-  }
-  .prose {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-  .prose h1, .prose h2, .prose h3 {
-    color: var(--text-main);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  .prose h2 {
-    font-size: 1.8rem;
-  }
-  .prose p {
-    margin-bottom: 1.5rem;
-  }
-  .prose ul, .prose ol {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-  .prose li {
-    margin-bottom: 0.5rem;
-  }
-  .prose strong {
-    color: var(--text-main);
-    font-weight: 700;
-  }
-</style>
