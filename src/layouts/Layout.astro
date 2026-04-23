@@ -22,12 +22,12 @@ const { title, description = "A minimalist blog about technology and productivit
     <ClientRouter />
   </head>
   <body>
-    <header class="header">
-      <div class="header-content">
-        <a href="/" class="logo">A<span>G</span></a>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/blog">Blog</a>
+    <header class="py-6 border-b border-[var(--color-border)] bg-[var(--color-glass)] backdrop-blur-xl sticky top-0 z-[100]">
+      <div class="max-w-[800px] mx-auto px-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-[var(--color-text-main)] tracking-tighter">A<span class="text-[var(--color-primary)]">G</span></a>
+        <nav class="flex gap-6">
+          <a href="/" class="font-medium text-[var(--color-text-muted)] text-[0.95rem] hover:text-[var(--color-text-main)]">Home</a>
+          <a href="/blog" class="font-medium text-[var(--color-text-muted)] text-[0.95rem] hover:text-[var(--color-text-main)]">Blog</a>
         </nav>
       </div>
     </header>
@@ -36,58 +36,9 @@ const { title, description = "A minimalist blog about technology and productivit
       <slot />
     </main>
 
-    <footer>
+    <footer class="text-center py-12 px-4 text-[var(--color-text-muted)] text-[0.85rem] border-t border-[var(--color-border)] mt-16">
       <p>&copy; {new Date().getFullYear()} Antigravity. Built for the future.</p>
     </footer>
 
-    <style>
-      .header {
-        padding: 1.5rem 0;
-        border-bottom: 1px solid var(--border-color);
-        background: var(--bg-glass);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .header-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--text-main);
-        letter-spacing: -0.05em;
-      }
-      .logo span {
-        color: var(--color-primary);
-      }
-      nav {
-        display: flex;
-        gap: 1.5rem;
-      }
-      nav a {
-        font-weight: 500;
-        color: var(--text-muted);
-        font-size: 0.95rem;
-      }
-      nav a:hover {
-        color: var(--text-main);
-      }
-      footer {
-        text-align: center;
-        padding: 3rem 1rem;
-        color: var(--text-muted);
-        font-size: 0.85rem;
-        border-top: 1px solid var(--border-color);
-        margin-top: 4rem;
-      }
-    </style>
   </body>
 </html>

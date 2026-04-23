@@ -8,14 +8,14 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 <Layout title="Blog">
   <div class="mb-8 mt-8">
-    <h1>All Transmissions</h1>
-    <p class="subtitle mb-8">Thoughts on code, design, and the future.</p>
+    <h1 class="text-4xl mb-4">All Transmissions</h1>
+    <p class="text-xl text-[var(--color-text-muted)] max-w-[600px] mb-8">Thoughts on code, design, and the future.</p>
   </div>
 
-  <div class="blog-list glass-panel">
+  <div class="flex flex-col gap-8 glass-panel">
     {posts.map((post) => (
-      <article class="post-item">
-        <a href={`/blog/${post.id}`} class="post-link">
+      <article class="border-b border-[var(--color-border)] pb-8 last:border-b-0 last:pb-0">
+        <a href={`/blog/${post.id}`} class="block no-underline text-inherit group">
           <span class="date-tag">
             {post.data.pubDate.toLocaleDateString('en-US', {
               year: 'numeric',
@@ -23,37 +23,11 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
               day: 'numeric',
             })}
           </span>
-          <h2>{post.data.title}</h2>
-          <p>{post.data.description}</p>
+          <h2 class="text-2xl mb-2 text-[var(--color-text-main)] transition-colors duration-300 group-hover:text-[var(--color-primary)]">{post.data.title}</h2>
+          <p class="text-[var(--color-text-muted)] text-[1.05rem] leading-[1.6] mt-2">{post.data.description}</p>
         </a>
       </article>
     ))}
   </div>
 </Layout>
 
-<style>
-  .subtitle {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-  }
-  .blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .post-item {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .post-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .post-item h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .post-item p {
-    color: var(--text-muted);
-  }
-</style>
