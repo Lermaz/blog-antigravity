@@ -1,29 +1,27 @@
-# Astro Starter Kit: Minimal
+# Minimalist Astro Blog
 
-```sh
-pnpm create astro@latest --template minimal
-```
+A high-performance, minimalist blog focused on technology and productivity, built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com/).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌟 Features
+
+- **Blazing Fast**: Built with Astro for optimal performance and zero JavaScript by default.
+- **Modern Styling**: Styled with Tailwind CSS v4 for a clean, highly readable, and responsive design.
+- **Content-First**: Markdown-powered blog posts leveraging Astro's Content Collections for type safety.
+- **Clean Typography**: Focus on extreme readability and modern aesthetics.
+- **Automated Deployments**: Configured with GitHub Actions for seamless CI/CD.
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
 /
-├── public/
+├── public/          # Static assets (images, fonts, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/  # Reusable UI components
+│   ├── content/     # Blog posts (Markdown/MDX)
+│   ├── layouts/     # Page layouts
+│   └── pages/       # Routing (Index, Blog List, Post View)
 └── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -38,6 +36,8 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🛠️ Technology Stack
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Framework**: [Astro 6.1+](https://astro.build/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
